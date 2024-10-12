@@ -17,12 +17,14 @@ export default function Job({job}) {
         <button className="px-5 py-2 border rounded font-bold mr-4">{remote_or_onsite}</button>
         <button className="px-5 py-2 border rounded font-bold  mr-4">{job_type}</button>
     </div>
-    <div>
+   <div className="flex gap-5">
+   <div>
         <h2 className="text-xl flex items-center mb-2"><CiLocationOn />{location}</h2>
     </div>
     <div>
         <h2 className="text-xl flex items-center mb-2"><CiDollar />{salary}</h2>
     </div>
+   </div>
     <div className="card-actions">
       <button className="btn btn-primary">View Details</button>
     </div>
