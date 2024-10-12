@@ -5,8 +5,10 @@ import Header from "../Header/Header";
 export default function Root() {
   return (
     <div>
+        <div className="max-w-6xl mx-auto">
         <Header/>
         <Outlet />
+        </div>
         <Footer/>
     </div>
   )
