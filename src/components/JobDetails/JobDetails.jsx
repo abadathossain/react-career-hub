@@ -8,11 +8,11 @@ export default function JobDetails() {
     const { id } = useParams()
     const idInt = parseInt(id)
     const job = jobs.find(job => job.id === idInt)
-    console.log(job)
+    // console.log(job)
     const { logo, company_name, job_description, job_responsibility, job_title, job_type, location, remote_or_onsite, salary } = job;
 
     const handleApply = () => {
-        addToLocalStorage(id)
+        addToLocalStorage(idInt)
         toast("Wow so easy!");
     }
 
