@@ -13,36 +13,42 @@ import AppliedJobs from './components/AppliedJobs/AppliedJobs.jsx';
 import Statistics from './components/Statistics/Statistics.jsx';
 import Jobs from './components/Jobs/Jobs.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
+import JobDetails from './components/JobDetails/JobDetails.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement:<ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "/jobs",
-        element: <Jobs/>,
+        element: <Jobs />,
+      },
+      {
+        path: "/job/:id",
+        element: <JobDetails />,
+        loader: () => fetch('../jobs.json')
       },
       {
         path: "/applied",
-        element: <AppliedJobs/>,
+        element: <AppliedJobs />,
       },
       {
         path: "/statistics",
-        element: <Statistics/>,
+        element: <Statistics />,
       },
     ],
-  },,
+  }, ,
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </StrictMode>,
 )
